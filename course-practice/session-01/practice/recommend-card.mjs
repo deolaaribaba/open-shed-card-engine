@@ -5,7 +5,5 @@
 export function recommendCard(view) {
   if (view.legalActions.playableCardIds.length === 0) return null;
 
-  // Deliberate lesson bug: the first card in a hand may not be playable.
-  // Change this line after reading the failing test.
-  return view.hand[0]?.id ?? null;
+  return view.legalActions.playableCardIds[0] ?? null;
 }
